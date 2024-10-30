@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "tmdb_user",
+    "password": "12341234",
+    "database": "tmdb_movies",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "tmdb_user",
+    "password": "12341234",
+    "database": "tmdb_movies",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "tmdb_user",
+    "password": "12341234",
+    "database": "tmdb_movies",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

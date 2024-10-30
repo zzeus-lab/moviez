@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0          # Specify MySQL version
+    container_name: mysql_db   # Optional: name the container
+    environment:
+      MYSQL_ROOT_PASSWORD: 12341234
+      MYSQL_DATABASE: tmdb_movies
+      MYSQL_USER: tmdb_user
+      MYSQL_PASSWORD: 12341234
+    ports:
+      - "3306:3306"            # Expose MySQL port
+    volumes:
+      - db_data:/var/lib/mysql # Persist data in a named volume
+    networks:
+      - db_network             # Add to a custom network for isolation
+
+volumes:
+  db_data:                      # Define named volume for persistent storage
+
+networks:
+  db_network:                   # Define custom network for container communication
