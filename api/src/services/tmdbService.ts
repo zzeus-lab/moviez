@@ -15,7 +15,7 @@ const fetchMovies = async () => {
     const response = await axios.get(`${TMDB_API_URL}`, {
       params: {
         api_key: TMDB_API_KEY,
-        language: "en-US",
+        language: "pt-BR",
         page: currentPage,
       },
     });

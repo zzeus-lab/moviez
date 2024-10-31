@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Movie from "../models/Movie";
-import fetchMovies from "../services/moviesService";
+import fetchMovies from "../services/tmdbService";
 
 // List movies in a paginated format
 export const listMovies = async (req: Request, res: Response) => {
