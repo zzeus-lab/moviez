@@ -6,7 +6,7 @@ import fetchMovies from "../services/tmdbService";
 export const listMovies = async (req: Request, res: Response) => {
   try {
     const page = parseInt(req.query.page as string) || 1;
-    const pageSize = 10;
+    const pageSize = 9;
 
     // Get total count of movies
     const { rows: movies, count } = await Movie.findAndCountAll({
