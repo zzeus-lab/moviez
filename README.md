@@ -8,8 +8,11 @@ Este projeto roda uma API Node conectada ao banco de dados MySQL e um front-end 
 
 ## Tecnologias
 Backend: **Node.js, TypeScript, Express, Sequelize**
+
 Banco de Dados: **MySQL**
+
 Frontend: **Next.js**
+
 Cron: **node-cron para atualização periódica dos dados**
 
 ## Pré-requisitos
@@ -20,7 +23,9 @@ API Key do TMDB: Obtenha em TMDB API
 ## Instalação e Execução
 ### Portas padrão
 Server(Express.js) :3000
+
 Client(Next.js) :3001
+
 ### Iniciar banco de dados
 No diretório raiz (onde está este README.md) 
 ```
@@ -34,6 +39,7 @@ cp .env.example .env
 ```
 
 Edite o arquivo .env e preencha o parâmetro TMDB_API_KEY com a sua chave e API TMDB.
+
 Agora inicialize as tabelas do banco usando: 
 ```
 npm run pre-start
@@ -59,6 +65,7 @@ Listagem de Filmes: GET /api/movies - Exibe filmes com paginação.
 Sincronização Manual: POST /api/movies/sync - Atualiza os filmes com dados do TMDB.
 
 Cron job: Executa automaticamente para manter a base de dados atualizada.
+
 
 
 **Scripts Úteis**
