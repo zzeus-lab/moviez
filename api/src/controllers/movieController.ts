@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import Movie from "../models/Movie";
-import fetchMovies from "../services/tmdbService";
+import fetchMovies from "../services/moviesService";
 
 // List movies in a paginated format
 export const listMovies = async (req: Request, res: Response) => {
@@ -8,13 +8,21 @@ export const listMovies = async (req: Request, res: Response) => {
     const page = parseInt(req.query.page as string) || 1;
     const pageSize = 10;
 
-    const movies = await Movie.findAll({
+    // Get total count of movies
+    const { rows: movies, count } = await Movie.findAndCountAll({
       order: [["release_date", "DESC"]],
       limit: pageSize,
-      offset: (page - 1) * pageSize,
+      offset: (page - 1) * pageSize, // next sequence
     });
 
-    res.json(movies);
+    // Calculate total pages
+    const totalPages = Math.ceil(count / pageSize);
+
+    res.json({
+      movies,
+      totalPages,
+      currentPage: page,
+    });
   } catch (error) {
     console.error("Error fetching movies:", error);
     res.status(500).json({ message: "Failed to fetch movies" });
