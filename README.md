@@ -1,4 +1,4 @@
-# TMDB movies
+# Moviez
 Este projeto roda uma API Node conectada ao banco de dados MySQL e um front-end Next.js.
 
 1. A API é responsável por consumir dados em https://api.themoviedb.org/3/discover/movie e armazenar informações relevantes em sua base de dados automaticamente, através de uma cron job.
