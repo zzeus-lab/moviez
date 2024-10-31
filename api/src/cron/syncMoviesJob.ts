@@ -1,7 +1,7 @@
 import cron from 'node-cron';
 import fetchMovies from '../services/tmdbService';
 
-// Schedule a job to sync movies from the TMDB API every day at midnight
+// Schedule a job to sync movies from the TMDB API every 60 seconds
 cron.schedule('*/60 * * * * *', async () => {
   console.log('Starting daily movie synchronization job');
   try {
