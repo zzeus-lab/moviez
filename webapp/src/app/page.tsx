@@ -5,6 +5,10 @@ import { toast } from "react-toastify";
 import Navbar from "./components/Navbar";
 import moviesService from "@/services/movies";
 import Pagination from "./components/Pagination";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import dayjs from "dayjs";
+
+dayjs.extend(localizedFormat);
 
 type Movie = {
   id: number;
@@ -66,7 +70,7 @@ export default function MoviesPage() {
   }, [currentPage]);
 
   return (
-    <div className="relative">
+    <div className=" text-white min-h-screen">
       <Navbar onSync={handleSync} isSyncing={isSyncing} />
       <div className="container mx-auto p-6 pt-24">
         <div className="mb-4">
@@ -83,13 +87,17 @@ export default function MoviesPage() {
             {movies?.map((movie) => (
               <div
                 key={movie.id}
-                className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition"
+                className="bg-dark-800 p-8 rounded-lg hover:shadow-lg transition"
               >
-                <h2 className="text-xl font-semibold text-blue-500">
-                  {movie.title}
-                </h2>
-                <p className="text-gray-500">{movie.release_date}</p>
-                <p className="text-gray-700 mt-2">{movie.overview}</p>
+                <div className="flex justify-between items-center mb-5">
+                  <h2 className="text-xl font-semibold text-white">
+                    {movie.title}
+                  </h2>
+                  <p className="text-gray-400">
+                    {dayjs(movie.release_date).format("DD/MM/YYYY")}
+                  </p>
+                </div>
+                <p className="text-gray-300 mt-2">{movie.overview}</p>
               </div>
             ))}
           </div>

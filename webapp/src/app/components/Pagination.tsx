@@ -36,7 +36,7 @@ export default function Pagination({
         onClick={() => handlePageChange(1)}
         disabled={currentPage === 1}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === 1 ? "bg-gray-300" : "bg-blue-500 text-white"
+          currentPage === 1 ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
         First
@@ -46,7 +46,7 @@ export default function Pagination({
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === 1 ? "bg-gray-300" : "bg-blue-500 text-white"
+          currentPage === 1 ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
         Previous
@@ -57,7 +57,7 @@ export default function Pagination({
           key={page}
           onClick={() => handlePageChange(page)}
           className={`px-3 py-1 rounded-lg ${
-            page === currentPage ? "bg-blue-600 text-white" : "bg-white text-gray-700"
+            page === currentPage ? "bg-purple-800 text-white" : " text-white"
           }`}
         >
           {page}
@@ -68,7 +68,7 @@ export default function Pagination({
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === totalPages ? "bg-gray-300" : "bg-blue-500 text-white"
+          currentPage === totalPages ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
         Next
@@ -78,7 +78,7 @@ export default function Pagination({
         onClick={() => handlePageChange(totalPages)}
         disabled={currentPage === totalPages}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === totalPages ? "bg-gray-300" : "bg-blue-500 text-white"
+          currentPage === totalPages ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
         Last

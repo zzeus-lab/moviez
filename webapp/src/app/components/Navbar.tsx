@@ -1,3 +1,5 @@
+import { FaSync } from "react-icons/fa";
+
 export default function Navbar({
   onSync,
   isSyncing,
@@ -6,19 +8,24 @@ export default function Navbar({
   isSyncing: boolean;
 }) {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-10">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <h1 className="text-2xl font-bold text-blue-600">Moviez</h1>
-        <button
-          onClick={onSync}
-          className={`px-4 py-2 rounded-lg ${
-            isSyncing ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"
-          } text-white`}
-          disabled={isSyncing}
-        >
-          {isSyncing ? "Syncing..." : "Sync Movies"}
-        </button>
-      </div>
+    <nav className=" p-4 flex justify-between items-center">
+      <h1 className="text-2xl font-bold">🎬 Movies App</h1>
+      <button
+        onClick={onSync}
+        className={`flex items-center bg-purple-800 text-white py-2 px-4 rounded transition ${
+          isSyncing ? "opacity-50 cursor-not-allowed" : "hover:bg-purple-700"
+        }`}
+        disabled={isSyncing}
+      >
+        {isSyncing ? (
+          <span className="loader">Syncing...</span>
+        ) : (
+          <>
+            <FaSync className="mr-2" />
+            Sync Movies
+          </>
+        )}
+      </button>
     </nav>
   );
 }
