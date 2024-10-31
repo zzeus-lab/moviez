@@ -4,6 +4,7 @@
   "description": "A Node.js API to sync and manage movie data from TMDB.",
   "main": "src/server.js",
   "scripts": {
+    "pre-start": "cd ./src && npx sequelize-cli db:migrate",
     "start": "ts-node src/server.ts",
     "dev": "ts-node-dev src/server.ts",
     "build": "tsc",
@@ -11,8 +12,10 @@
     "sync": "ts-node src/cron/syncMoviesJob.ts"
   },
   "dependencies": {
+    "@types/cors": "^2.8.17",
     "@types/node-cron": "^3.0.11",
     "axios": "^1.7.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mysql2": "^3.11.3",
