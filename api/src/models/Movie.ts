@@ -6,6 +6,7 @@ class Movie extends Model {
   public title!: string;
   public release_date!: Date;
   public overview!: string;
+  public syncPage!: number;
   public popularity!: number;
 }
 
@@ -29,6 +30,9 @@ Movie.init(
     },
     popularity: {
       type: DataTypes.FLOAT,
+    },
+    syncPage: {
+      type: DataTypes.INTEGER,
     },
   },
   {
