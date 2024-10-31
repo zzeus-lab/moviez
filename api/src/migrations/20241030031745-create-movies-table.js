@@ -24,6 +24,9 @@ module.exports = {
       popularity: {
         type: DataTypes.FLOAT,
       },
+      syncPage: {
+        type: DataTypes.INTEGER,
+      },
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
