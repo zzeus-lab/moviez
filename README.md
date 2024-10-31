@@ -46,6 +46,7 @@ Acesse a API em http://localhost:3000/api/movies.
 ```
 cd webapp
 npm i
+npm run build
 npm start
 ```
 Frontend disponível em http://localhost:3001
