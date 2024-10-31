@@ -7,6 +7,7 @@ import moviesService from "@/services/movies";
 import Pagination from "./components/Pagination";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import dayjs from "dayjs";
+import { FaCalendar } from "react-icons/fa";
 
 dayjs.extend(localizedFormat);
 
@@ -81,7 +82,25 @@ export default function MoviesPage() {
           />
         </div>
         {isLoading ? (
-          <p className="text-center text-gray-500">Loading...</p>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+              <div
+                key={index}
+                className="bg-dark-800 p-8 rounded-lg hover:shadow-lg transition h-[200px]"
+              >
+                <div className="flex justify-between items-center mb-5">
+                  <h2 className="text-xl font-semibold text-white">
+                    Loading...
+                  </h2>
+                  <div className="flex gap-2 items-center">
+                    <small className="text-gray-400">Loading...</small>
+                    <FaCalendar />
+                  </div>
+                </div>
+                <p className="text-gray-300 mt-2">Loading...</p>
+              </div>
+            ))}
+          </div>
         ) : (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {movies?.map((movie) => (
@@ -93,9 +112,12 @@ export default function MoviesPage() {
                   <h2 className="text-xl font-semibold text-white">
                     {movie.title}
                   </h2>
-                  <p className="text-gray-400">
-                    {dayjs(movie.release_date).format("DD/MM/YYYY")}
-                  </p>
+                  <div className="flex gap-2 items-center">
+                    <small className="text-gray-400">
+                      {dayjs(movie.release_date).format("DD/MM/YYYY")}
+                    </small>
+                    <FaCalendar />
+                  </div>
                 </div>
                 <p className="text-gray-300 mt-2">{movie.overview}</p>
               </div>

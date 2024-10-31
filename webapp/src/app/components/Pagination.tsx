@@ -1,4 +1,5 @@
 import React from "react";
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 type PaginationProps = {
   currentPage: number;
@@ -11,7 +12,7 @@ export default function Pagination({
   totalPages,
   onPageChange,
 }: PaginationProps) {
-  const maxPagesToShow = 5; // Limit the number of pages shown in pagination
+  const maxPagesToShow = 3; // Limit the number of pages shown in pagination
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
@@ -36,20 +37,24 @@ export default function Pagination({
         onClick={() => handlePageChange(1)}
         disabled={currentPage === 1}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === 1 ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
+          currentPage === 1
+            ? "text-gray-600"
+            : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
-        First
+        <FaAngleDoubleLeft />
       </button>
 
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === 1 ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
+          currentPage === 1
+            ? "text-gray-600"
+            : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
-        Previous
+        <FaAngleLeft />
       </button>
 
       {getPageNumbers().map((page) => (
@@ -68,20 +73,24 @@ export default function Pagination({
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === totalPages ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
+          currentPage === totalPages
+            ? "text-gray-600"
+            : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
-        Next
+        <FaAngleRight />
       </button>
 
       <button
         onClick={() => handlePageChange(totalPages)}
         disabled={currentPage === totalPages}
         className={`px-3 py-1 rounded-lg ${
-          currentPage === totalPages ? "text-gray-600" : "bg-purple-button hover:bg-purple-700 text-white"
+          currentPage === totalPages
+            ? "text-gray-600"
+            : "bg-purple-button hover:bg-purple-700 text-white"
         }`}
       >
-        Last
+        <FaAngleDoubleRight />
       </button>
     </div>
   );
