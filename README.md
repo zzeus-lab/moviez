@@ -16,7 +16,7 @@ Frontend: **Next.js**
 Cron: **node-cron para atualização periódica dos dados**
 
 ## Pré-requisitos
-Node.js >= 18.x
+Node.js >= 20.x
 MySQL >= 8.x
 API Key do TMDB: Obtenha em TMDB API
   
