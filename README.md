@@ -1,10 +1,11 @@
-
-
 # TMDB movies
 Este projeto roda uma API Node conectada ao banco de dados MySQL e um front-end Next.js.
 
 1. A API é responsável por consumir dados em https://api.themoviedb.org/3/discover/movie e armazenar informações relevantes em sua base de dados automaticamente, através de uma cron job.
 2. O front-end é responsável por listar todos os filmes com paginação para o usuário.
+
+![image](https://github.com/user-attachments/assets/6d709b4c-aa4f-4fcc-bd30-35281100af8b)
+
 
 ## Tecnologias
 Backend: **Node.js, TypeScript, Express, Sequelize**
@@ -73,3 +74,5 @@ Cron job: Executa automaticamente para manter a base de dados atualizada.
 **Scripts Úteis**
 
 Sincronizar Banco de Dados: npm run db:setup
+
+![image](https://github.com/user-attachments/assets/2a406885-3b87-4c7b-a1bb-8fa490017830)
